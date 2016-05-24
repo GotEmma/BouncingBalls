@@ -28,6 +28,8 @@ public final class BouncingBalls extends Animator {
 		model = new DummyModel(modelWidth, modelHeight);
 	}
 
+	//HEJHEJHEJHEJJ!!!!!!!
+
 	@Override
 	protected void drawFrame(Graphics2D g) {
 		// Clear the canvas

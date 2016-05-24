@@ -25,8 +25,8 @@
       <file leaf-file-name="BouncingBalls.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BouncingBalls.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.6258206">
+              <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -91,6 +91,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/text.java" />
         <option value="$PROJECT_DIR$/src/DummyModel.java" />
+        <option value="$PROJECT_DIR$/src/BouncingBalls.java" />
       </list>
     </option>
   </component>
@@ -585,8 +586,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BouncingBalls.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.6258206">
+          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
           <folding />
         </state>
       </provider>
