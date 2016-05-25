@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45a5389b-d5dc-4570-9c7b-db87a8f09a6b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tempclass.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/bouncingBalls/DummyModel.class" afterPath="$PROJECT_DIR$/out/production/bouncingBalls/DummyModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BouncingBall.java" afterPath="$PROJECT_DIR$/src/BouncingBall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DummyModel.java" afterPath="$PROJECT_DIR$/src/DummyModel.java" />
-    </list>
+    <list default="true" id="45a5389b-d5dc-4570-9c7b-db87a8f09a6b" name="Default" comment="" />
     <ignored path="bouncingBalls.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -51,8 +45,8 @@
       <file leaf-file-name="DummyModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DummyModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.8822315">
-              <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.84504133">
+              <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
               <folding>
                 <element signature="e#2619#2630#0" expanded="true" />
               </folding>
@@ -686,8 +680,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DummyModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.8822315">
-          <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.84504133">
+          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
           <folding>
             <element signature="e#2619#2630#0" expanded="true" />
           </folding>
