@@ -18,6 +18,8 @@ public class DummyModel implements IBouncingBallsModel {
 		ballList.add(new BouncingBall(1.0,1.0,2.3,1.0,1.0));
 	}
 
+
+
 	@Override
 	public void tick(double deltaT) {
 
