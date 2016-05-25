@@ -25,12 +25,31 @@ public class Tempclass {
 	}
 
 	public void collision() {
-		double deltaX, deltaY;
+		double deltaX, deltaY, collisionDistance, rotAngle;
 
-        deltaX=b1pos.x-b2pos.x;
-		deltaY=b1pos.y-b2pos.y;
+        for(int i=0; i<ballList.length(); i++){
+            for(int j=0; j<ballList.length(); j++){
+                deltaX = ballList.get(i).getX()-ballList.get(j).getX();
+                deltaY = ballList.get(i).getY()-ballList.get(j).getY();
+                collisionDistance = ballList.get(i).getRadius()+ballList.get(j).getRadius();
+                if(deltaX*deltaX + deltaY*deltaY < collisionDistance*collisionDistance) {
+                    rotAngle=Math.atan(deltaY/deltaX);
+                    b1vel.rotate(-rotAngle);
+                    b2vel.rotate(-rotAngle);
 
-		collisionDistance=b1radius+b2radius;
+                    I = b1mass*b1vel.x+b2mass*b2vel.x;
+                    R = -(b2vel.x-b1vel.x);
+                    b1vel.x = (I-R*b2mass) / (b1mass+b2mass);
+                    b2vel.x = R+b1vel.x;
+
+                    b1vel.rotate(rotAngle)
+                    b2vel.rotate(rotAngle);
+                }
+            }
+        }
+    }
+
+
 		if( deltaX*deltaX + deltaY*deltaY < collisionDistance*collisionDistance) {
 
 			rotAngle=atan(deltaY/deltaX);
@@ -46,5 +65,5 @@ public class Tempclass {
 			b1vel.rotate(rotAngle)
 			b2vel.rotate(rotAngle);
 		}
-		*/
+
 }
