@@ -8,6 +8,8 @@ public class DummyModel implements IBouncingBallsModel {
 	private final double areaHeight;
 	private final double gravity;
 	private List<BouncingBall> ballList;
+	double x,y,r,angle;
+
 
 	public DummyModel(double width, double height) {
 		this.areaWidth = width;
@@ -17,7 +19,54 @@ public class DummyModel implements IBouncingBallsModel {
 		ballList = new LinkedList<BouncingBall>();
 		ballList.add(new BouncingBall(1.0,1.0,2.3,1.0,1.0,1.0));
 	}
-	
+
+
+	public void rectToPolar(BouncingBall ball) {
+		r= Math.sqrt(ball.getVx()*ball.getVx()+ball.getVy()*ball.getVy());
+		angle= Math.atan(y/x);
+		if (ball.getVx()<0){
+			angle+=Math.PI;
+		}
+	}
+
+	public void polarToRect(BouncingBall ball) {
+		ball.setVx(r*Math.cos(angle));
+		ball.setVy(r*Math.sin(angle));
+	}
+
+	public void rotate(double rotateAngle, BouncingBall ball) {
+		rectToPolar(ball);
+		angle+=rotateAngle;
+		polarToRect(ball);
+	}
+
+	public void collision() {
+		double deltaX, deltaY, collisionDistance, rotAngle, I, R;
+
+		for(int i=0; i<ballList.size(); i++){
+			for(int j=0; j<ballList.size(); j++){
+				deltaX = ballList.get(i).getX()-ballList.get(j).getX();
+				deltaY = ballList.get(i).getY()-ballList.get(j).getY();
+				collisionDistance = ballList.get(i).getRadius()+ballList.get(j).getRadius();
+				if(deltaX*deltaX + deltaY*deltaY < collisionDistance*collisionDistance) {
+					rotAngle=Math.atan(deltaY/deltaX);
+					rotate(-rotAngle, ballList.get(i));
+					rotate(-rotAngle, ballList.get(j));
+					I = ballList.get(i).getMass()*ballList.get(i).getVx()+ballList.get(j).getMass()*ballList.get(j).getVx();
+					R = -(ballList.get(j).getVx()-ballList.get(i).getVx());
+					ballList.get(i).setVx((I-R*ballList.get(j).getMass()) / (ballList.get(i).getMass()+ballList.get(j).getMass()));
+					ballList.get(j).setVx(R+ballList.get(i).getVx());
+
+					rotate(rotAngle, ballList.get(i));
+					rotate(rotAngle, ballList.get(j));
+				}
+			}
+		}
+	}
+
+
+
+
 
 	@Override
 	public void tick(double deltaT) {
@@ -41,9 +90,9 @@ public class DummyModel implements IBouncingBallsModel {
 			x += vx * deltaT;
 			y += vy * deltaT;
 		}
+		collision();
 
 	}
-
 	
 	//För alla bollar i listan, lägg dem i myballs med rätt x, y, r.
 	@Override

@@ -28,4 +28,9 @@ public class BouncingBall {
 	public double getMass(){
 		return this.mass;
 	}
+	public void setVy(double Vy){ this.vy = Vy; }
+	public void setVx(double Vx){ this.vx = Vx; }
+	public void setX(double x){this.x = x;}
+	public void setY(double y){this.y = y;}
+
 }

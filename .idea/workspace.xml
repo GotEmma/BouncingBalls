@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45a5389b-d5dc-4570-9c7b-db87a8f09a6b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/bouncingBalls/BouncingBalls.class" afterPath="$PROJECT_DIR$/out/production/bouncingBalls/BouncingBalls.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Tempclass.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/bouncingBalls/DummyModel.class" afterPath="$PROJECT_DIR$/out/production/bouncingBalls/DummyModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Tempclass.java" afterPath="$PROJECT_DIR$/src/Tempclass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BouncingBall.java" afterPath="$PROJECT_DIR$/src/BouncingBall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DummyModel.java" afterPath="$PROJECT_DIR$/src/DummyModel.java" />
     </list>
     <ignored path="bouncingBalls.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,21 +51,11 @@
       <file leaf-file-name="DummyModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DummyModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.2623968">
-              <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
+            <state vertical-scroll-proportion="2.8822315">
+              <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
               <folding>
-                <element signature="e#1450#1461#0" expanded="true" />
+                <element signature="e#2619#2630#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tempclass.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tempclass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -72,8 +63,8 @@
       <file leaf-file-name="BouncingBall.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BouncingBall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+            <state vertical-scroll-proportion="-11.666667">
+              <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -102,8 +93,9 @@
         <option value="$PROJECT_DIR$/src/text.java" />
         <option value="$PROJECT_DIR$/src/BouncingBalls.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/DummyModel.java" />
         <option value="$PROJECT_DIR$/src/Tempclass.java" />
+        <option value="$PROJECT_DIR$/src/BouncingBall.java" />
+        <option value="$PROJECT_DIR$/src/DummyModel.java" />
       </list>
     </option>
   </component>
@@ -573,7 +565,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
           <folding>
-            <element signature="e#1450#1461#0" expanded="true" />
+            <element signature="e#2619#2630#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -615,7 +607,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1450#1461#0" expanded="true" />
+            <element signature="e#2619#2630#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -676,14 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BouncingBall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BouncingBalls.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -692,20 +676,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tempclass.java">
+    <entry file="file://$PROJECT_DIR$/src/BouncingBall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+        <state vertical-scroll-proportion="-11.666667">
+          <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DummyModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.2623968">
-          <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
+        <state vertical-scroll-proportion="2.8822315">
+          <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
           <folding>
-            <element signature="e#1450#1461#0" expanded="true" />
+            <element signature="e#2619#2630#0" expanded="true" />
           </folding>
         </state>
       </provider>
