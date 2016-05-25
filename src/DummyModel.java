@@ -40,26 +40,10 @@ public class DummyModel implements IBouncingBallsModel {
 			}
 			x += vx * deltaT;
 			y += vy * deltaT;
+		}
 
-		gravity = -9.82;
-		//Skapar listan med bollar och addar dem
-		ballList = new LinkedList<BouncingBall>();
-		ballList.add(new BouncingBall(1.0,1.0,2.3,1.0,1.0));
 	}
 
-
-
-	@Override
-	public void tick(double deltaT) {
-
-		if (x < r || x > areaWidth - r) {
-			vx *= -1;
-		}
-		if (y < r || y > areaHeight - r) {
-			vy *= -1;
-
-		}
-	}
 	
 	//För alla bollar i listan, lägg dem i myballs med rätt x, y, r.
 	@Override
