@@ -22,6 +22,7 @@ public class DummyModel implements IBouncingBallsModel {
 
 	@Override
 	public void tick(double deltaT) {
+
 		if (x < r || x > areaWidth - r) {
 			vx *= -1;
 		}
