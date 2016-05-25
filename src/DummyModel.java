@@ -12,7 +12,6 @@ public class DummyModel implements IBouncingBallsModel {
 	public DummyModel(double width, double height) {
 		this.areaWidth = width;
 		this.areaHeight = height;
-<<<<<<< HEAD
 		gravity = -9.82;
 		//Skapar listan med bollar och addar dem
 		ballList = new LinkedList<BouncingBall>();
@@ -41,7 +40,7 @@ public class DummyModel implements IBouncingBallsModel {
 			}
 			x += vx * deltaT;
 			y += vy * deltaT;
-=======
+
 		gravity = -9.82;
 		//Skapar listan med bollar och addar dem
 		ballList = new LinkedList<BouncingBall>();
@@ -58,7 +57,7 @@ public class DummyModel implements IBouncingBallsModel {
 		}
 		if (y < r || y > areaHeight - r) {
 			vy *= -1;
->>>>>>> origin/master
+
 		}
 	}
 	
