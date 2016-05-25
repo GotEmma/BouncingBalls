@@ -18,7 +18,7 @@ public class DummyModel implements IBouncingBallsModel {
 		//Skapar listan med bollar och addar dem
 		ballList = new LinkedList<BouncingBall>();
 		ballList.add(new BouncingBall(1.0,1.0,2.3,1.0,1.0,1.0));
-		ballList.add(new BouncingBall(10.0,10.0,2.3,1.0,2.0,2.0))
+		ballList.add(new BouncingBall(2.0,4.0,2.3,3.0,2.0,2.0));
 	}
 	
 
@@ -73,7 +73,7 @@ public class DummyModel implements IBouncingBallsModel {
 
 	@Override
 	public void tick(double deltaT) {
-		collision();
+		//collision();
 		double r;
 		double x;
 		double y;
@@ -91,8 +91,11 @@ public class DummyModel implements IBouncingBallsModel {
 			if (y < r || y > areaHeight - r) {
 				ball.setVy(vy * -1);
 			}
-			ball.setX(x + vx * deltaT);
-			ball.setY(y + vy * deltaT);
+			else {
+				ball.setVy(vy+deltaT*gravity);
+			}
+			ball.setX(x + ball.getVx() * deltaT);
+			ball.setY(y + ball.getVy() * deltaT);
 		}
 
 	}
