@@ -9,7 +9,6 @@ public class DummyModel implements IBouncingBallsModel {
 	private final double gravity;
 	private List<BouncingBall> ballList;
 
-
 	public DummyModel(double width, double height) {
 		this.areaWidth = width;
 		this.areaHeight = height;
@@ -18,7 +17,6 @@ public class DummyModel implements IBouncingBallsModel {
 		ballList = new LinkedList<BouncingBall>();
 		ballList.add(new BouncingBall(1.0,1.0,2.3,1.0,1.0));
 	}
-	
 
 	@Override
 	public void tick(double deltaT) {
