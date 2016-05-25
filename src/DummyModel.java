@@ -16,6 +16,7 @@ public class DummyModel implements IBouncingBallsModel {
 		//Skapar listan med bollar och addar dem
 		ballList = new LinkedList<BouncingBall>();
 		ballList.add(new BouncingBall(1.0,1.0,2.3,1.0,1.0,1.0));
+		ballList.add(new BouncingBall(10.0,10.0,2.3,1.0,2.0,2.0))
 	}
 	
 
@@ -33,13 +34,13 @@ public class DummyModel implements IBouncingBallsModel {
 			vy = ball.getVy();
 			vx = ball.getVx();
 			if (x < r || x > areaWidth - r) {
-				vx *= -1;
+				ball.setVx(vx * -1);
 			}
 			if (y < r || y > areaHeight - r) {
-				vy *= -1;
+				ball.setVy(vy * -1);
 			}
-			x += vx * deltaT;
-			y += vy * deltaT;
+			ball.setX(x + vx * deltaT);
+			ball.setY(y + vy * deltaT);
 		}
 
 	}
