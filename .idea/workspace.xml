@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45a5389b-d5dc-4570-9c7b-db87a8f09a6b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/bouncingBalls/DummyModel.class" afterPath="$PROJECT_DIR$/out/production/bouncingBalls/DummyModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DummyModel.java" afterPath="$PROJECT_DIR$/src/DummyModel.java" />
     </list>
     <ignored path="bouncingBalls.iws" />
@@ -46,24 +44,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DummyModel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/DummyModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5661157">
-              <caret line="97" column="38" selection-start-line="97" selection-start-column="38" selection-end-line="97" selection-end-column="38" />
-              <folding>
-                <element signature="e#2795#2806#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BouncingBall.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BouncingBall.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-11.666667">
               <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DummyModel.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DummyModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.8595041">
+              <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+              <folding>
+                <element signature="e#3403#3414#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -563,7 +561,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
           <folding>
-            <element signature="e#2795#2806#0" expanded="true" />
+            <element signature="e#3403#3414#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -605,7 +603,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2795#2806#0" expanded="true" />
+            <element signature="e#3403#3414#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -684,10 +682,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DummyModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5661157">
-          <caret line="97" column="38" selection-start-line="97" selection-start-column="38" selection-end-line="97" selection-end-column="38" />
+        <state vertical-scroll-proportion="1.8595041">
+          <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
           <folding>
-            <element signature="e#2795#2806#0" expanded="true" />
+            <element signature="e#3403#3414#0" expanded="true" />
           </folding>
         </state>
       </provider>
