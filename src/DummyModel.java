@@ -9,18 +9,18 @@ public class DummyModel implements IBouncingBallsModel {
 	private final double areaHeight;
 	private final double gravity;
 	private List<BouncingBall> ballList;
-	double r,angle;
+	private double r,angle;
 	private boolean isCollided;
 
 
 	public DummyModel(double width, double height) {
 		this.areaWidth = width;
 		this.areaHeight = height;
-		gravity = -9.82;
+		gravity = -0.82;
 		//Skapar listan med bollar och addar dem
 		ballList = new LinkedList<BouncingBall>();
-		ballList.add(new BouncingBall(1.0,1.0,5.3,5.0,1.0,1.0));
-		ballList.add(new BouncingBall(5.0,4.0,7.3,5.0,1.0,2.0));
+		ballList.add(new BouncingBall(3.0,10.0,4.3,10.0,1.0,1.0));
+		ballList.add(new BouncingBall(5.0,10.0,7.3,10.0,1.0,2.0));
 	}
 
 
@@ -44,10 +44,11 @@ public class DummyModel implements IBouncingBallsModel {
 	}
 
 	public void collision(BouncingBall ball1, BouncingBall ball2) {
+		System.out.println("KROCK");
 		double deltaX, deltaY, rotAngle, I, R;
 
-		deltaX = Math.abs(ball1.getX() - ball2.getX());
-		deltaY = Math.abs(ball1.getY() - ball2.getY());
+		deltaX = ball1.getX() - ball2.getX();
+		deltaY = ball1.getY() - ball2.getY();
 		rotAngle = Math.atan(deltaY / deltaX);
 
 		rotate(-rotAngle, ball1);
@@ -63,49 +64,62 @@ public class DummyModel implements IBouncingBallsModel {
 		rotate(rotAngle, ball2);
 	}
 
+	public boolean isColliding(BouncingBall ball1, BouncingBall ball2) {
+		if (ball1.getX() + ball1.getRadius() + ball2.getRadius() > ball2.getX()
+				&& ball1.getX() < ball2.getX() + ball1.getRadius() + ball2.getRadius()
+				&& ball1.getY() + ball1.getRadius() + ball2.getRadius() > ball2.getY()
+				&& ball1.getY() < ball2.getY() + ball1.getRadius() + ball2.getRadius())
+		{
+			double cathetus1 = Math.pow(ball1.getX() - ball2.getX(),2);
+			double cathetus2 = Math.pow(ball1.getY() - ball2.getY(),2);
+			double hypotenuse = Math.sqrt(cathetus1 + cathetus2);
+			return hypotenuse <= ball1.getRadius() + ball2.getRadius();
+		}
+		return false;
+	}
+
+
 	@Override
 	public void tick(double deltaT) {
-		isCollided=false;
+		isCollided = false;
+		//System.out.println("Start tick");
 
-		for(BouncingBall ball : ballList) {
-			ball.setX(ball.getX() + ball.getVx() * deltaT);
-			ball.setY(ball.getY() + ball.getVy() * deltaT);
+		for (BouncingBall ball : ballList) {
+			ball.setX(ball.getX() + (ball.getVx() * deltaT));
+			ball.setY(ball.getY() + (ball.getVy() * deltaT));
 		}
-		for(BouncingBall ball : ballList){
+
+		for (BouncingBall ball : ballList) {
 			BouncingBall ball1 = ball;
-			for(BouncingBall balll : ballList){
+			for (BouncingBall balll : ballList) {
 				BouncingBall ball2 = balll;
-				double deltaX,deltaY,collisionDistance;
-				deltaX = Math.abs(ball1.getX() - ball2.getX());
-				deltaY = Math.abs(ball1.getY() - ball2.getY());
-				collisionDistance = ball1.getRadius() + ball2.getRadius();
-				/*if(ball1.getX() + ball1.getRadius() + ball2.getRadius() > ball2.getX()
-						&& ball1.getX() < ball2.getX() + ball1.getRadius() + ball2.getRadius()
-						&& ball1.getY() + ball1.getRadius() + ball2.getRadius() > ball2.getY()
-						&& ball1.getY() < ball2.getY() + ball1.getRadius() + ball2.getRadius())*/
-				if ((deltaX * deltaX + deltaY * deltaY <= collisionDistance * collisionDistance) && !isCollided && !ball1.equals(ball2)) {
+				if (!ball1.equals(ball2) && isColliding(ball1,ball2)) {
 					collision(ball1, ball2);
 					isCollided = true;
 				}
-
 			}
+
 		}
 
-		for(BouncingBall ball : ballList){
+		for (BouncingBall ball : ballList) {
 			if (ball.getX() < ball.getRadius() || ball.getX() > areaWidth - ball.getRadius()) {
+				System.out.println("in x wall");
 				isCollided = true;
 				ball.setVx(ball.getVx() * -1);
 			}
 			if (ball.getY() < ball.getRadius() || ball.getY() > areaHeight - ball.getRadius()) {
+				System.out.println("in y wall");
 				isCollided = true;
 				ball.setVy(ball.getVy() * -1);
 			}
-			else if(!isCollided) {
-				ball.setVy(ball.getVy()+deltaT*gravity);
+		}
+		if (!isCollided) {
+			for (BouncingBall ball : ballList) {
+				ball.setVy(ball.getVy() + deltaT * gravity);
 			}
 		}
 	}
-	
+
 	//För alla bollar i listan, lägg dem i myballs med rätt x, y, r.
 	@Override
 	public List<Ellipse2D> getBalls() {

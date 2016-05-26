@@ -1,7 +1,7 @@
 
 public class BouncingBall {
 	private double x, vx, y, vy,radius, mass;
-	
+
 	public BouncingBall(double x, double vx, double y, double vy, double radius, double mass){
 		this.x = x;
 		this.vx = vx;
