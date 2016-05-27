@@ -33,22 +33,4 @@ public class BouncingBall {
 	public void setX(double x){this.x = x;}
 	public void setY(double y){this.y = y;}
 	
-	public boolean isColliding(BouncingBall ball2) {
-		if (this.x + this.radius + ball2.radius > ball2.x
-                && this.x < ball2.x + this.radius + ball2.radius
-                && this.y + this.radius + ball2.radius > ball2.y
-                && this.y < ball2.y + this.radius + ball2.radius)
-		{
-			double cathetus1 = Math.pow(this.x - ball2.x,2);
-			double cathetus2 = Math.pow(this.y - ball2.y,2);
-			double hypotenuse = Math.sqrt(cathetus1 + cathetus2);
-			return hypotenuse <= this.radius + ball2.getRadius();
-		}
-		return false;
-	}
-	//public String toString(){
-		//return ”X: ” + this.x + ” Y: ” + this.y + ” Vx: ” + this.vx + 
-		//” Vy: ” + this.vy + ” Radius: ” + this.radius + ” Mass: ” + this.mass;  
-	//}
-
 }

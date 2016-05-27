@@ -11,52 +11,48 @@ public class DummyModel implements IBouncingBallsModel {
 	private BouncingBall[] ballList;
 	private double dist,angle;
 
-
-
 	public DummyModel(double width, double height) {
 		this.areaWidth = width;
 		this.areaHeight = height;
 		//Skapar listan med bollar och addar dem
 		ballList = new BouncingBall[2];
 		ballList[0] = new BouncingBall(5.0,6.0,5.0,14.0,1.0,20.0);
-		ballList[1]=new BouncingBall(10.0,-8.0,10.0,12.0,1.5,30.0);
+		ballList[1] = new BouncingBall(10.0,-8.0,10.0,12.0,1.5,30.0);
 	}
+	
 	@Override
 	public void tick(double deltaT) {
 		boolean isCollided = false;
-		//System.out.println("Start tick");
-
 		for (BouncingBall ball : ballList) {
 			ball.setX(ball.getX() + (ball.getVx() * deltaT));
 			ball.setY(ball.getY() + (ball.getVy() * deltaT));
 		}
-
 		for (int i = 0; i<ballList.length-1; i++) {
 			BouncingBall ball1 = ballList[i];
 			for (int j = i+1; j<ballList.length; j++) {
 				BouncingBall ball2 = ballList[j];
-				System.out.println(i + " " + j);
-				if (ball1.isColliding(ball2)) {
+				double xDist = Math.pow(ball1.getX() - ball2.getX(),2);
+				double yDist = Math.pow(ball1.getY() - ball2.getY(),2);
+				double totDist = Math.sqrt(xDist + yDist);
+				if(totDist <= ball1.getRadius() + ball2.getRadius())
+				{
 					collision(ball1, ball2);
 					isCollided = true;
 				}
 			}
-
 		}
-
+		//Change velocity when colliding with walls
 		for (BouncingBall ball : ballList) {
 			if (ball.getX() < ball.getRadius() || ball.getX() > areaWidth - ball.getRadius()) {
-				System.out.println("in x wall");
 				ball.setVx(ball.getVx() * -1);
 				isCollided = true;
-				
 			}
 			if (ball.getY() < ball.getRadius() || ball.getY() > areaHeight - ball.getRadius()) {
-				System.out.println("in y wall");
 				ball.setVy(ball.getVy() * -1);
 				isCollided = true;
 			}
 		}
+		//If not collided, apply gravity
 		if (!isCollided) {
 			for (BouncingBall ball : ballList) {
 				ball.setVy(ball.getVy() - (ball.getMass() * deltaT * gravity));
@@ -64,7 +60,6 @@ public class DummyModel implements IBouncingBallsModel {
 		}
 	}
 	public void collision(BouncingBall ball1, BouncingBall ball2) {
-		System.out.println("KROCK");
 		double deltaX, deltaY, rotAngle, I, R;
 
 		deltaX = ball1.getX() - ball2.getX();
@@ -88,7 +83,7 @@ public class DummyModel implements IBouncingBallsModel {
 		angle+=rotateAngle;
 		polarToRect(ball);
 	}
-	
+
 	public void rectToPolar(BouncingBall ball) {
 		dist = Math.sqrt(ball.getVx()*ball.getVx()+ball.getVy()*ball.getVy());
 		angle= Math.atan(ball.getVy()/ball.getVx());
@@ -102,8 +97,6 @@ public class DummyModel implements IBouncingBallsModel {
 		ball.setVy(dist*Math.sin(angle));
 	}
 
-	
-	//För alla bollar i listan, lägg dem i myballs med rätt x, y, r.
 	@Override
 	public List<Ellipse2D> getBalls() {
 		List<Ellipse2D> myBalls = new LinkedList<Ellipse2D>();
